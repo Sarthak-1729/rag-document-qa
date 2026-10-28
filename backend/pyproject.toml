@@ -8,6 +8,10 @@ dependencies = [
     "uvicorn[standard]>=0.30",
     "pydantic>=2.7",
     "pydantic-settings>=2.7",
+    "python-multipart>=0.0.9",
+    "pypdf>=5.0",
+    "chromadb>=1.0",
+    "sentence-transformers>=3.0",
 ]
 
 [project.optional-dependencies]

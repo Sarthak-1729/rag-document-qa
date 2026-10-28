@@ -4,7 +4,7 @@ from functools import lru_cache
 from pathlib import Path
 from typing import Annotated, Literal
 
-from pydantic import Field, field_validator
+from pydantic import Field, field_validator, model_validator
 from pydantic_settings import BaseSettings, NoDecode, SettingsConfigDict
 
 BACKEND_DIR = Path(__file__).resolve().parents[1]
@@ -23,6 +23,18 @@ class Settings(BaseSettings):
     cors_origins: Annotated[list[str], NoDecode] = ["http://localhost:5173"]
     data_dir: Path = Path("data")
     max_upload_mb: int = Field(default=20, gt=0, le=200)
+    max_files_per_upload: int = Field(default=10, gt=0)
+
+    embedding_model: str = "sentence-transformers/all-MiniLM-L6-v2"
+    # ~800 chars is ~200 tokens: safely under MiniLM's 256-token input limit.
+    chunk_size: int = Field(default=800, gt=0)
+    chunk_overlap: int = Field(default=150, ge=0)
+
+    @model_validator(mode="after")
+    def check_overlap(self) -> "Settings":
+        if self.chunk_overlap >= self.chunk_size:
+            raise ValueError("CHUNK_OVERLAP must be smaller than CHUNK_SIZE")
+        return self
 
     @field_validator("cors_origins", mode="before")
     @classmethod
@@ -45,6 +57,14 @@ class Settings(BaseSettings):
     @property
     def chroma_dir(self) -> Path:
         return self.data_dir / "chroma_db"
+
+    @property
+    def registry_path(self) -> Path:
+        return self.data_dir / "documents.json"
+
+    @property
+    def max_upload_bytes(self) -> int:
+        return self.max_upload_mb * 1024 * 1024
 
 
 @lru_cache

@@ -14,9 +14,10 @@ __pycache__/
 .coverage
 htmlcov/
 
-# Runtime data (user uploads and the vector index)
+# Runtime data (user uploads, the vector index, and the document list)
 uploads/
 chroma_db/
+backend/data/
 
 # Node
 node_modules/
