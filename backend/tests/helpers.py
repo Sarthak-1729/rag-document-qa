@@ -68,3 +68,20 @@ class HashingEmbedder:
 
     def embed_query(self, text: str) -> list[float]:
         return self._embed(text)
+
+
+class FakeLLM:
+    """Stands in for Ollama/Gemini: returns a scripted reply (or raises) and records prompts."""
+
+    name = "fake"
+
+    def __init__(self, reply: str = "Default answer [1].") -> None:
+        self.reply = reply
+        self.error: Exception | None = None
+        self.calls: list[tuple[str, str]] = []
+
+    def generate(self, system: str, user: str) -> str:
+        self.calls.append((system, user))
+        if self.error:
+            raise self.error
+        return self.reply
