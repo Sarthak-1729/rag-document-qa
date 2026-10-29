@@ -39,7 +39,11 @@ class Settings(BaseSettings):
     # Requests per client IP per minute on /ask; 0 disables the limit.
     ask_rate_limit_per_minute: int = Field(default=10, ge=0)
 
-    cors_origins: Annotated[list[str], NoDecode] = ["http://localhost:5173"]
+    # The Vite dev server, reachable under either hostname.
+    cors_origins: Annotated[list[str], NoDecode] = [
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+    ]
     data_dir: Path = Path("data")
     max_upload_mb: int = Field(default=20, gt=0, le=200)
     max_files_per_upload: int = Field(default=10, gt=0)

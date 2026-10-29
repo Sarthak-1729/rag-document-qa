@@ -45,6 +45,9 @@ def create_app(
         allow_origins=settings.cors_origins,
         allow_methods=["GET", "POST", "DELETE"],
         allow_headers=["Content-Type"],
+        # Browsers hide most response headers from cross-origin JS; the UI needs this one
+        # to tell users how long to wait after a 429.
+        expose_headers=["Retry-After"],
     )
     app.include_router(health.router)
     app.include_router(documents.router)
