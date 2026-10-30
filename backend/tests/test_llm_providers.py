@@ -9,20 +9,7 @@ from app.llm.base import LLMError
 from app.llm.gemini import API_URL, GeminiProvider
 from app.llm.ollama import OllamaProvider
 from app.ratelimit import RateLimiter
-
-
-class FakePost:
-    """Replaces httpx.post: records the request, then returns a response or raises."""
-
-    def __init__(self, status: int = 200, json: object = None, exc: Exception | None = None):
-        self.status, self.json, self.exc = status, json, exc
-        self.calls: list[dict] = []
-
-    def __call__(self, url, **kwargs):
-        self.calls.append({"url": url, **kwargs})
-        if self.exc:
-            raise self.exc
-        return httpx.Response(self.status, json=self.json, request=httpx.Request("POST", url))
+from tests.helpers import FakePost
 
 
 @pytest.fixture

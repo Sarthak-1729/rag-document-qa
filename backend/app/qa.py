@@ -54,10 +54,13 @@ def resolve_citations(answer: str, hits: list[SearchHit]) -> tuple[str, list[Sea
             if n not in renumber:
                 cited.append(hits[n - 1])
                 renumber[n] = len(cited)
-            parts.append(f"[{renumber[n]}]")
+            marker = f"[{renumber[n]}]"
+            if marker not in parts:  # "[1, 1]" -> "[1]"
+                parts.append(marker)
         return "".join(parts)
 
     rewritten = _CITATION.sub(replace, answer)
+    rewritten = re.sub(r"(\[\d+\])(?:\1)+", r"\1", rewritten)  # "[2][2]" -> "[2]"
     rewritten = re.sub(r"[ \t]+([.,;:])", r"\1", rewritten)  # tidy "word [9]." -> "word."
     return rewritten.strip(), cited
 

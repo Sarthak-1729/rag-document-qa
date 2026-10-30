@@ -4,6 +4,8 @@ import hashlib
 import math
 import re
 
+import httpx
+
 
 def _escape(text: str) -> str:
     return text.replace("\\", "\\\\").replace("(", "\\(").replace(")", "\\)")
@@ -85,3 +87,17 @@ class FakeLLM:
         if self.error:
             raise self.error
         return self.reply
+
+
+class FakePost:
+    """Replaces httpx.post: records the request, then returns a response or raises."""
+
+    def __init__(self, status: int = 200, json: object = None, exc: Exception | None = None):
+        self.status, self.json, self.exc = status, json, exc
+        self.calls: list[dict] = []
+
+    def __call__(self, url, **kwargs):
+        self.calls.append({"url": url, **kwargs})
+        if self.exc:
+            raise self.exc
+        return httpx.Response(self.status, json=self.json, request=httpx.Request("POST", url))

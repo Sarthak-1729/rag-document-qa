@@ -8,4 +8,9 @@ export default defineConfig({
     // Fail instead of silently moving to another port the backend's CORS list doesn't allow.
     strictPort: true,
   },
+  test: {
+    environment: 'jsdom',
+    setupFiles: ['./src/test/setup.js'],
+    include: ['src/**/*.test.{js,jsx}'],
+  },
 });

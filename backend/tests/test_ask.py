@@ -63,7 +63,7 @@ def test_only_cited_chunks_are_returned_as_sources(loaded_client, fake_llm):
 def test_citations_are_renumbered_and_invalid_ones_dropped():
     hits = [hit(1), hit(2), hit(3)]
     answer, cited = resolve_citations("A [2]. B [7]. C [1, 2]. D [3][3].", hits)
-    assert answer == "A [1]. B. C [2][1]. D [3][3]."
+    assert answer == "A [1]. B. C [2][1]. D [3]."
     assert [h.page for h in cited] == [2, 1, 3]
 
 

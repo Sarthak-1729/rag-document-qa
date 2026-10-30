@@ -30,22 +30,23 @@ export default function App({ api, confirmDelete = (message) => window.confirm(m
     set((previous) => ({ id: previous.id + 1, text }));
   }, []);
 
-  const loadDocuments = useCallback(async () => {
-    setDocsLoading(true);
-    try {
-      setDocuments(await api.listDocuments());
-      setDocsError('');
-    } catch (error) {
-      setDocsError(error.detail ?? 'Could not load documents.');
-    } finally {
-      setDocsLoading(false);
-    }
-  }, [api]);
-
   useEffect(() => {
-    loadDocuments();
-    api.health().then(setHealth, () => setHealth(null));
-  }, [api, loadDocuments]);
+    let active = true; // ignore responses that arrive after unmount
+    api
+      .listDocuments()
+      .then(
+        (docs) => active && setDocuments(docs),
+        (error) => active && setDocsError(error.detail ?? 'Could not load documents.'),
+      )
+      .finally(() => active && setDocsLoading(false));
+    api.health().then(
+      (result) => active && setHealth(result),
+      () => active && setHealth(null),
+    );
+    return () => {
+      active = false;
+    };
+  }, [api]);
 
   function handleUploaded(doc) {
     setDocuments((current) => [...current, doc]);

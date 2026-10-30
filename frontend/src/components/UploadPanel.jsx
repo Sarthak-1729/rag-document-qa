@@ -35,7 +35,7 @@ export default function UploadPanel({ uploadDocument, onUploaded }) {
       status: 'uploading',
       progress: 0,
     }));
-    setItems(batch.map(({ file, ...rest }) => rest));
+    setItems(batch.map(({ file, ...rest }) => rest)); // File objects stay out of state
     setBusy(true);
     setSummary(`Uploading ${files.length} file${files.length === 1 ? '' : 's'}…`);
 
