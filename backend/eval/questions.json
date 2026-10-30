@@ -1,0 +1,329 @@
+{
+  "status": "UNVERIFIED",
+  "verification": "Written by the assistant from extracted page text on 2026-10-30, before any retrieval or LLM run. Not yet checked by a human. To verify: open each PDF, go to `page` in the viewer's page box, confirm the `supporting_phrase` is there and answers the question, then set that entry's `verified` to true. When all are verified, set `status` to VERIFIED and add a changelog entry.",
+  "page_index": "`page` is the 1-based physical page index (the number in a PDF viewer's page box), NOT the number printed on the page. Example: Constitution page 37 is printed as 31.",
+  "rules": "Do not edit questions after seeing results unless the change is logged in `changelog` with a reason. Every results file records this file's SHA-256.",
+  "changelog": [
+    {
+      "date": "2026-10-30",
+      "change": "Initial set: 25 answerable (9 AI RMF, 8 CSF 2.0, 8 Constitution) + 5 unanswerable. Written before any evaluation run."
+    }
+  ],
+  "questions": [
+    {
+      "id": "rmf-01",
+      "answerable": true,
+      "doc": "NIST.AI.100-1.pdf",
+      "page": 23,
+      "difficulty": "easy",
+      "phrasing": "close",
+      "question": "What are the three major categories of AI bias identified by NIST?",
+      "supporting_phrase": "systemic, computational and statistical, and human-cognitive",
+      "verified": false
+    },
+    {
+      "id": "rmf-02",
+      "answerable": true,
+      "doc": "NIST.AI.100-1.pdf",
+      "page": 12,
+      "difficulty": "hard",
+      "phrasing": "paraphrased",
+      "question": "Does the AI RMF tell an organization how much risk it should be willing to accept?",
+      "supporting_phrase": "it does not prescribe risk tolerance",
+      "verified": false
+    },
+    {
+      "id": "rmf-03",
+      "answerable": true,
+      "doc": "NIST.AI.100-1.pdf",
+      "page": 9,
+      "difficulty": "easy",
+      "phrasing": "close",
+      "question": "How does the AI RMF define risk?",
+      "supporting_phrase": "the composite measure of an event",
+      "verified": false
+    },
+    {
+      "id": "rmf-04",
+      "answerable": true,
+      "doc": "NIST.AI.100-1.pdf",
+      "page": 7,
+      "difficulty": "hard",
+      "phrasing": "paraphrased",
+      "question": "Which piece of legislation called for NIST to create this AI framework?",
+      "supporting_phrase": "National Artificial Intelligence Initiative Act of 2020",
+      "verified": false
+    },
+    {
+      "id": "rmf-05",
+      "answerable": true,
+      "doc": "NIST.AI.100-1.pdf",
+      "page": 25,
+      "difficulty": "easy",
+      "phrasing": "close",
+      "question": "What are the four functions of the AI RMF Core?",
+      "supporting_phrase": "the Core is composed of four functions",
+      "verified": false
+    },
+    {
+      "id": "rmf-06",
+      "answerable": true,
+      "doc": "NIST.AI.100-1.pdf",
+      "page": 25,
+      "difficulty": "hard",
+      "phrasing": "paraphrased",
+      "question": "Which AI RMF function is meant to inform and run through all of the other functions?",
+      "supporting_phrase": "Governance is designed to be a cross-cutting function",
+      "verified": false
+    },
+    {
+      "id": "rmf-07",
+      "answerable": true,
+      "doc": "NIST.AI.100-1.pdf",
+      "page": 14,
+      "difficulty": "easy",
+      "phrasing": "close",
+      "question": "What does TEVV stand for in the AI RMF?",
+      "supporting_phrase": "test, evaluation, verification, and validation (TEVV)",
+      "verified": false
+    },
+    {
+      "id": "rmf-08",
+      "answerable": true,
+      "doc": "NIST.AI.100-1.pdf",
+      "page": 17,
+      "difficulty": "hard",
+      "phrasing": "paraphrased",
+      "question": "Which trustworthiness characteristic must be in place before the others can matter?",
+      "supporting_phrase": "Valid & Reliable is a necessary condition",
+      "verified": false
+    },
+    {
+      "id": "rmf-09",
+      "answerable": true,
+      "doc": "NIST.AI.100-1.pdf",
+      "page": 38,
+      "difficulty": "hard",
+      "phrasing": "paraphrased",
+      "question": "After an AI system goes live, what should be in place to keep watching how it behaves?",
+      "supporting_phrase": "Post-deployment AI system monitoring plans are implemented",
+      "verified": false
+    },
+    {
+      "id": "csf-01",
+      "answerable": true,
+      "doc": "NIST.CSWP.29.pdf",
+      "page": 8,
+      "difficulty": "easy",
+      "phrasing": "close",
+      "question": "What are the six CSF 2.0 Core Functions?",
+      "supporting_phrase": "GOVERN, IDENTIFY, PROTECT, DETECT, RESPOND, and RECOVER",
+      "verified": false
+    },
+    {
+      "id": "csf-02",
+      "answerable": true,
+      "doc": "NIST.CSWP.29.pdf",
+      "page": 9,
+      "difficulty": "hard",
+      "phrasing": "paraphrased",
+      "question": "In the Cybersecurity Framework, which function covers controlling who can log in and access systems?",
+      "supporting_phrase": "identity management, authentication, and access control",
+      "verified": false
+    },
+    {
+      "id": "csf-03",
+      "answerable": true,
+      "doc": "NIST.CSWP.29.pdf",
+      "page": 9,
+      "difficulty": "easy",
+      "phrasing": "close",
+      "question": "What is the RECOVER function about in CSF 2.0?",
+      "supporting_phrase": "Assets and operations affected by a cybersecurity incident are restored",
+      "verified": false
+    },
+    {
+      "id": "csf-04",
+      "answerable": true,
+      "doc": "NIST.CSWP.29.pdf",
+      "page": 10,
+      "difficulty": "hard",
+      "phrasing": "paraphrased",
+      "question": "Should the cybersecurity framework's functions be carried out one after another in sequence?",
+      "supporting_phrase": "The Functions should be addressed concurrently",
+      "verified": false
+    },
+    {
+      "id": "csf-05",
+      "answerable": true,
+      "doc": "NIST.CSWP.29.pdf",
+      "page": 12,
+      "difficulty": "easy",
+      "phrasing": "close",
+      "question": "What are the four CSF Tiers?",
+      "supporting_phrase": "Risk Informed (Tier 2), Repeatable (Tier 3), and Adaptive (Tier 4)",
+      "verified": false
+    },
+    {
+      "id": "csf-06",
+      "answerable": true,
+      "doc": "NIST.CSWP.29.pdf",
+      "page": 22,
+      "difficulty": "hard",
+      "phrasing": "paraphrased",
+      "question": "According to the framework, who ultimately owns cybersecurity risk in an organization?",
+      "supporting_phrase": "Organizational leadership is responsible and accountable for cybersecurity risk",
+      "verified": false
+    },
+    {
+      "id": "csf-07",
+      "answerable": true,
+      "doc": "NIST.CSWP.29.pdf",
+      "page": 5,
+      "difficulty": "easy",
+      "phrasing": "close",
+      "question": "What kinds of organizations is the Cybersecurity Framework 2.0 designed to help?",
+      "supporting_phrase": "organizations of all sizes and sectors",
+      "verified": false
+    },
+    {
+      "id": "csf-08",
+      "answerable": true,
+      "doc": "NIST.CSWP.29.pdf",
+      "page": 12,
+      "difficulty": "hard",
+      "phrasing": "paraphrased",
+      "question": "What is the first thing to do when building a CSF Organizational Profile?",
+      "supporting_phrase": "Scope the Organizational Profile",
+      "verified": false
+    },
+    {
+      "id": "con-01",
+      "answerable": true,
+      "doc": "CDOC-110hdoc50.pdf",
+      "page": 8,
+      "difficulty": "hard",
+      "phrasing": "paraphrased",
+      "question": "How old do you have to be to serve in the House of Representatives?",
+      "supporting_phrase": "Age of twenty five Years",
+      "verified": false
+    },
+    {
+      "id": "con-02",
+      "answerable": true,
+      "doc": "CDOC-110hdoc50.pdf",
+      "page": 13,
+      "difficulty": "easy",
+      "phrasing": "close",
+      "question": "What is the minimum age to be eligible for the office of President?",
+      "supporting_phrase": "thirty five Years, and been fourteen Years a Resident",
+      "verified": false
+    },
+    {
+      "id": "con-03",
+      "answerable": true,
+      "doc": "CDOC-110hdoc50.pdf",
+      "page": 28,
+      "difficulty": "hard",
+      "phrasing": "paraphrased",
+      "question": "Can a person be elected president three times?",
+      "supporting_phrase": "more than twice",
+      "verified": false
+    },
+    {
+      "id": "con-04",
+      "answerable": true,
+      "doc": "CDOC-110hdoc50.pdf",
+      "page": 11,
+      "difficulty": "hard",
+      "phrasing": "paraphrased",
+      "question": "Can the government hold someone in custody without letting them challenge the detention in court?",
+      "supporting_phrase": "Writ of Habeas Corpus shall not be",
+      "verified": false
+    },
+    {
+      "id": "con-05",
+      "answerable": true,
+      "doc": "CDOC-110hdoc50.pdf",
+      "page": 15,
+      "difficulty": "easy",
+      "phrasing": "close",
+      "question": "How can Congress propose amendments to the Constitution?",
+      "supporting_phrase": "whenever two thirds of both Houses shall deem it",
+      "verified": false
+    },
+    {
+      "id": "con-06",
+      "answerable": true,
+      "doc": "CDOC-110hdoc50.pdf",
+      "page": 19,
+      "difficulty": "hard",
+      "phrasing": "paraphrased",
+      "question": "Are people protected from the government searching their homes without good reason?",
+      "supporting_phrase": "against unreasonable searches and seizures",
+      "verified": false
+    },
+    {
+      "id": "con-07",
+      "answerable": true,
+      "doc": "CDOC-110hdoc50.pdf",
+      "page": 19,
+      "difficulty": "easy",
+      "phrasing": "close",
+      "question": "On what date was ratification of the Bill of Rights completed?",
+      "supporting_phrase": "Ratification was completed on December 15, 1791",
+      "verified": false
+    },
+    {
+      "id": "con-08",
+      "answerable": true,
+      "doc": "CDOC-110hdoc50.pdf",
+      "page": 20,
+      "difficulty": "easy",
+      "phrasing": "close",
+      "question": "What does the Constitution say about excessive bail?",
+      "supporting_phrase": "Excessive bail shall not be required",
+      "verified": false
+    },
+    {
+      "id": "neg-01",
+      "answerable": false,
+      "difficulty": "easy",
+      "question": "What is the boiling point of mercury in Kelvin?",
+      "why_unanswerable": "Off-topic: none of the three documents discusses chemistry.",
+      "verified": false
+    },
+    {
+      "id": "neg-02",
+      "answerable": false,
+      "difficulty": "hard",
+      "question": "How many staff members work in the European Union's AI Office?",
+      "why_unanswerable": "Near-topic (AI governance) but the EU AI Office is not in these U.S. documents.",
+      "verified": false
+    },
+    {
+      "id": "neg-03",
+      "answerable": false,
+      "difficulty": "hard",
+      "question": "What is the annual salary of a U.S. Senator in dollars?",
+      "why_unanswerable": "Near-topic: the Constitution says compensation is set by law but gives no amount.",
+      "verified": false
+    },
+    {
+      "id": "neg-04",
+      "answerable": false,
+      "difficulty": "hard",
+      "question": "How much does the official NIST CSF 2.0 certification exam cost?",
+      "why_unanswerable": "Near-topic, false premise: CSF 2.0 describes no certification exam or price.",
+      "verified": false
+    },
+    {
+      "id": "neg-05",
+      "answerable": false,
+      "difficulty": "hard",
+      "question": "Which company developed the GPT-4 language model?",
+      "why_unanswerable": "Near-topic (AI) general knowledge that is not stated in these documents.",
+      "verified": false
+    }
+  ]
+}

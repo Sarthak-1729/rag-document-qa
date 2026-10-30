@@ -19,6 +19,12 @@ uploads/
 chroma_db/
 backend/data/
 
+# Evaluation: downloaded PDFs, its private index, and unfinished runs (final results ARE committed)
+backend/eval/docs/
+backend/eval/.index/
+backend/eval/results/*.partial.json
+backend/eval/results/*.tmp
+
 # Node
 node_modules/
 dist/

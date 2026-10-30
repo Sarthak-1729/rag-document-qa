@@ -32,8 +32,8 @@ jobs:
 
       - name: Lint
         run: |
-          ruff check app tests
-          ruff format --check app tests
+          ruff check app tests eval
+          ruff format --check app tests eval
 
       # Tests use a fake embedder and fake LLM: no model download, no network, no secrets.
       - name: Test

@@ -48,3 +48,5 @@ select = ["E", "F", "I", "B", "UP"]
 [tool.ruff.lint.per-file-ignores]
 # Prompt text reads better without artificial line breaks.
 "app/llm/prompts.py" = ["E501"]
+# Markdown table templates.
+"eval/report.py" = ["E501"]
