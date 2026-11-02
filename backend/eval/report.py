@@ -7,13 +7,24 @@ import json
 import sys
 from pathlib import Path
 
+from eval import metrics
+
+QUESTIONS_PATH = Path(__file__).resolve().parent / "questions.json"
+
+
+def retrieval_groups(result: dict) -> dict:
+    """Recompute hit@k from the stored ranks, so older result files also get newer k values."""
+    questions = json.loads(QUESTIONS_PATH.read_text(encoding="utf-8"))["questions"]
+    return metrics.summarize_retrieval(questions, result["retrieval_rows"])
+
 
 def pct(numerator: int, denominator: int) -> str:
     return f"{numerator}/{denominator} ({numerator / denominator:.0%})" if denominator else "n/a"
 
 
 def render(result: dict) -> str:
-    meta, retrieval, threshold = result["meta"], result["retrieval"], result["threshold"]
+    meta, threshold = result["meta"], result["threshold"]
+    retrieval = retrieval_groups(result)
     commit = (meta["git"]["commit"] or "unknown")[:7] + (" (dirty)" if meta["git"]["dirty"] else "")
     lines = [
         f"_Run `{meta['run_id']}` · {meta['date_utc']} · commit `{commit}` · "
@@ -23,12 +34,13 @@ def render(result: dict) -> str:
         "",
         "**Retrieval** (25 answerable questions; hit = the expected PDF page is among the top-k chunks; lenient also accepts other pages containing the supporting phrase)",
         "",
-        "| Questions | n | hit@1 | hit@3 | hit@5 |",
-        "|---|---:|---:|---:|---:|",
+        "| Questions | n | hit@1 | hit@3 | hit@4 | hit@5 |",
+        "|---|---:|---:|---:|---:|---:|",
     ]
     for name, g in retrieval.items():
         lines.append(
-            f"| {name} | {g['n']} | {g['hit@1']:.0%} | {g['hit@3']:.0%} | {g['hit@5']:.0%} |"
+            f"| {name} | {g['n']} | {g['hit@1']:.0%} | {g['hit@3']:.0%} "
+            f"| {g['hit@4']:.0%} | {g['hit@5']:.0%} |"
         )
 
     a, u = threshold["top1_score_answerable"], threshold["top1_score_unanswerable"]

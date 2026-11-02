@@ -214,28 +214,6 @@ def run_llm(
 # --- Summaries --------------------------------------------------------------------------------
 
 
-def summarize_retrieval(questions: list[dict], rows: list[dict]) -> dict:
-    by_id = {q["id"]: q for q in questions}
-    answerable = [r for r in rows if r["answerable"]]
-
-    def hits_for(subset: list[dict], key: str = "rank") -> dict:
-        ranks = [r[key] for r in subset]
-        return {
-            "n": len(subset),
-            **{f"hit@{k}": round(metrics.hit_at_k(ranks, k), 4) for k in (1, 3, 5)},
-        }
-
-    groups: dict[str, dict] = {
-        "all (strict: expected page)": hits_for(answerable),
-        "all (lenient: any page with the phrase)": hits_for(answerable, "rank_lenient"),
-    }
-    for key in ("doc", "phrasing"):
-        for value in sorted({by_id[r["id"]][key] for r in answerable}):
-            subset = [r for r in answerable if by_id[r["id"]][key] == value]
-            groups[f"{key}={value}"] = hits_for(subset)
-    return groups
-
-
 def score_stats(scores: list[float]) -> dict:
     return {
         "n": len(scores),
@@ -315,9 +293,10 @@ def summarize_llm(questions: list[dict], records: dict, rows: list[dict], thresh
 def print_summary(result: dict) -> None:
     r, t = result["retrieval"], result["threshold"]
     log("\n=== Retrieval (25 answerable questions, top-5 search over all 3 PDFs) ===")
-    log(f"{'group':28s} {'n':>3s} {'hit@1':>7s} {'hit@3':>7s} {'hit@5':>7s}")
+    log(f"{'group':40s} {'n':>3s} {'hit@1':>7s} {'hit@3':>7s} {'hit@4':>7s} {'hit@5':>7s}")
     for name, g in r.items():
-        log(f"{name:28s} {g['n']:3d} {g['hit@1']:7.1%} {g['hit@3']:7.1%} {g['hit@5']:7.1%}")
+        hits = " ".join(f"{g[f'hit@{k}']:7.1%}" for k in metrics.HIT_KS)
+        log(f"{name:40s} {g['n']:3d} {hits}")
     a, u = t["top1_score_answerable"], t["top1_score_unanswerable"]
     log("\n=== Top-1 similarity scores ===")
     log(
@@ -424,6 +403,7 @@ def main(argv: list[str] | None = None) -> None:
                 "mode": "retrieval-only" if args.skip_llm else "full",
                 "git": git_state(),
                 "questions_sha256": questions_sha,
+                "questions_content_sha256": metrics.questions_content_sha256(questions),
                 "questions_status": questions_doc["status"],
                 "questions_verified": sum(q.get("verified", False) for q in questions),
                 "questions_total": len(questions),
@@ -443,7 +423,7 @@ def main(argv: list[str] | None = None) -> None:
 
     rows = run_retrieval(service, questions, elsewhere)
     result["retrieval_rows"] = rows
-    result["retrieval"] = summarize_retrieval(questions, rows)
+    result["retrieval"] = metrics.summarize_retrieval(questions, rows)
     result["threshold"] = summarize_threshold(rows)
     save = Saver(path, result)
     save()

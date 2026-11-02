@@ -69,6 +69,41 @@ def test_question_file_is_well_formed():
     assert all(q["why_unanswerable"] for q in questions if not q["answerable"])
 
 
+def fake_rows():
+    """Ranks for the 25 real answerable questions: 15 at rank 0, 5 at 2, one each at 3 and 4."""
+    questions = json.loads(QUESTIONS.read_text(encoding="utf-8"))["questions"]
+    ranks = [0] * 15 + [2] * 5 + [3, 4] + [None] * 3
+    answerable = [q for q in questions if q["answerable"]]
+    return [
+        {"id": q["id"], "answerable": True, "rank": rank, "rank_lenient": rank}
+        for q, rank in zip(answerable, ranks, strict=True)
+    ]
+
+
+def test_questions_content_hash_ignores_verified_flags_but_not_content():
+    original = [{"id": "a", "question": "Why?", "page": 3, "verified": False}]
+    verified = [{"id": "a", "question": "Why?", "page": 3, "verified": True}]
+    reordered = [{"verified": False, "page": 3, "question": "Why?", "id": "a"}]
+    changed_page = [{"id": "a", "question": "Why?", "page": 4, "verified": False}]
+    baseline = metrics.questions_content_sha256(original)
+    assert metrics.questions_content_sha256(verified) == baseline
+    assert metrics.questions_content_sha256(reordered) == baseline
+    assert metrics.questions_content_sha256(changed_page) != baseline
+
+
+def test_summarize_retrieval_includes_hit_at_4():
+    questions = json.loads(QUESTIONS.read_text(encoding="utf-8"))["questions"]
+    groups = metrics.summarize_retrieval(questions, fake_rows())
+    assert groups["all (strict: expected page)"] == {
+        "n": 25,
+        "hit@1": 0.6,
+        "hit@3": 0.8,
+        "hit@4": 0.84,
+        "hit@5": 0.88,
+    }
+    assert groups["doc=NIST.AI.100-1.pdf"]["n"] == 9
+
+
 @pytest.fixture
 def fake_result():
     stats = {"n": 1, "min": 0.5, "median": 0.5, "max": 0.5, "values": [0.5]}
@@ -85,7 +120,7 @@ def fake_result():
             "chunk_overlap": 150,
             "llm": {"provider": "gemini", "model": "g", "max_tokens": 1024},
         },
-        "retrieval": {"all": {"n": 25, "hit@1": 0.6, "hit@3": 0.8, "hit@5": 0.9}},
+        "retrieval_rows": fake_rows(),
         "threshold": {
             "top1_score_answerable": stats,
             "top1_score_unanswerable": stats,
@@ -131,7 +166,8 @@ def fake_result():
 
 def test_report_renders_numbers_from_the_result_file(fake_result):
     markdown = render(fake_result)
-    assert "| all | 25 | 60% | 80% | 90% |" in markdown
+    assert "| hit@1 | hit@3 | hit@4 | hit@5 |" in markdown
+    assert "| all (strict: expected page) | 25 | 60% | 80% | 84% | 88% |" in markdown
     assert "(lenient) | 21/23 (91%) |" in markdown
     assert "UNVERIFIED (0/30 verified)" in markdown
     assert "| Unanswerable questions refused | 5/5 (100%) |" in markdown

@@ -1,9 +1,13 @@
 """Pure metric functions for the evaluation (no I/O, so they are unit-tested)."""
 
+import hashlib
+import json
 import re
 import unicodedata
 from collections.abc import Collection, Sequence
 from dataclasses import dataclass
+
+HIT_KS = (1, 3, 4, 5)
 
 
 def normalize(text: str) -> str:
@@ -26,6 +30,33 @@ def first_hit_rank(hits: Sequence[tuple[str, int]], doc: str, pages: Collection[
 
 def hit_at_k(ranks: Sequence[int | None], k: int) -> float:
     return sum(1 for r in ranks if r is not None and r < k) / len(ranks) if ranks else 0.0
+
+
+def summarize_retrieval(questions: list[dict], rows: list[dict]) -> dict:
+    """hit@k overall (strict and lenient) and per document and phrasing."""
+    by_id = {q["id"]: q for q in questions}
+    answerable = [r for r in rows if r["answerable"]]
+
+    def hits_for(subset: list[dict], key: str = "rank") -> dict:
+        ranks = [r[key] for r in subset]
+        return {"n": len(subset), **{f"hit@{k}": round(hit_at_k(ranks, k), 4) for k in HIT_KS}}
+
+    groups: dict[str, dict] = {
+        "all (strict: expected page)": hits_for(answerable),
+        "all (lenient: any page with the phrase)": hits_for(answerable, "rank_lenient"),
+    }
+    for key in ("doc", "phrasing"):
+        for value in sorted({by_id[r["id"]][key] for r in answerable}):
+            subset = [r for r in answerable if by_id[r["id"]][key] == value]
+            groups[f"{key}={value}"] = hits_for(subset)
+    return groups
+
+
+def questions_content_sha256(questions: list[dict]) -> str:
+    """Hash the questions and expected answers; file headers and `verified` flags don't count."""
+    content = [{k: v for k, v in q.items() if k != "verified"} for q in questions]
+    canonical = json.dumps(content, sort_keys=True, ensure_ascii=False, separators=(",", ":"))
+    return hashlib.sha256(canonical.encode("utf-8")).hexdigest()
 
 
 @dataclass(frozen=True)
