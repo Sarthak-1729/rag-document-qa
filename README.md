@@ -9,11 +9,17 @@ weaknesses reported alongside its strengths.
 
 ## Screenshots
 
-> **Placeholder:** upload panel and document list (`docs/screenshots/upload.png`)
+An answer with numbered citations, with the cited passage open in the source panel:
 
-> **Placeholder:** answer with numbered citations and the source panel (`docs/screenshots/answer.png`)
+![Answer listing the four AI RMF functions with citations [1] and [2], and the source panel showing the passage from nist.ai.100-1.pdf, PDF page 25](docs/screenshots/answer.png)
 
-> **Placeholder:** refusal state (`docs/screenshots/refusal.png`)
+A question the document can't answer, shown as a labeled refusal rather than an error:
+
+![A question about the boiling point of mercury with the notice "I couldn't find this in your documents"](docs/screenshots/refusal.png)
+
+The upload panel and document list:
+
+![Upload panel above a document list showing nist.ai.100-1.pdf with 48 pages and 197 passages, and a Delete button](docs/screenshots/upload.png)
 
 ## Features
 
