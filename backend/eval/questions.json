@@ -1,12 +1,16 @@
 {
-  "status": "UNVERIFIED",
-  "verification": "Written by the assistant from extracted page text on 2026-10-30, before any retrieval or LLM run. Not yet checked by a human. To verify: open each PDF, go to `page` in the viewer's page box, confirm the `supporting_phrase` is there and answers the question, then set that entry's `verified` to true. When all are verified, set `status` to VERIFIED and add a changelog entry.",
+  "status": "VERIFIED",
+  "verification": "Verified by Sarthak on 2026-11-02 against the PDFs, before the first LLM run.",
   "page_index": "`page` is the 1-based physical page index (the number in a PDF viewer's page box), NOT the number printed on the page. Example: Constitution page 37 is printed as 31.",
   "rules": "Do not edit questions after seeing results unless the change is logged in `changelog` with a reason. Every results file records this file's SHA-256.",
   "changelog": [
     {
       "date": "2026-10-30",
       "change": "Initial set: 25 answerable (9 AI RMF, 8 CSF 2.0, 8 Constitution) + 5 unanswerable. Written before any evaluation run."
+    },
+    {
+      "date": "2026-11-02",
+      "change": "Human verification by Sarthak: checked all 30 entries against the PDFs and set verified=true. Question content changed: none."
     }
   ],
   "questions": [
@@ -19,7 +23,7 @@
       "phrasing": "close",
       "question": "What are the three major categories of AI bias identified by NIST?",
       "supporting_phrase": "systemic, computational and statistical, and human-cognitive",
-      "verified": false
+      "verified": true
     },
     {
       "id": "rmf-02",
@@ -30,7 +34,7 @@
       "phrasing": "paraphrased",
       "question": "Does the AI RMF tell an organization how much risk it should be willing to accept?",
       "supporting_phrase": "it does not prescribe risk tolerance",
-      "verified": false
+      "verified": true
     },
     {
       "id": "rmf-03",
@@ -41,7 +45,7 @@
       "phrasing": "close",
       "question": "How does the AI RMF define risk?",
       "supporting_phrase": "the composite measure of an event",
-      "verified": false
+      "verified": true
     },
     {
       "id": "rmf-04",
@@ -52,7 +56,7 @@
       "phrasing": "paraphrased",
       "question": "Which piece of legislation called for NIST to create this AI framework?",
       "supporting_phrase": "National Artificial Intelligence Initiative Act of 2020",
-      "verified": false
+      "verified": true
     },
     {
       "id": "rmf-05",
@@ -63,7 +67,7 @@
       "phrasing": "close",
       "question": "What are the four functions of the AI RMF Core?",
       "supporting_phrase": "the Core is composed of four functions",
-      "verified": false
+      "verified": true
     },
     {
       "id": "rmf-06",
@@ -74,7 +78,7 @@
       "phrasing": "paraphrased",
       "question": "Which AI RMF function is meant to inform and run through all of the other functions?",
       "supporting_phrase": "Governance is designed to be a cross-cutting function",
-      "verified": false
+      "verified": true
     },
     {
       "id": "rmf-07",
@@ -85,7 +89,7 @@
       "phrasing": "close",
       "question": "What does TEVV stand for in the AI RMF?",
       "supporting_phrase": "test, evaluation, verification, and validation (TEVV)",
-      "verified": false
+      "verified": true
     },
     {
       "id": "rmf-08",
@@ -96,7 +100,7 @@
       "phrasing": "paraphrased",
       "question": "Which trustworthiness characteristic must be in place before the others can matter?",
       "supporting_phrase": "Valid & Reliable is a necessary condition",
-      "verified": false
+      "verified": true
     },
     {
       "id": "rmf-09",
@@ -107,7 +111,7 @@
       "phrasing": "paraphrased",
       "question": "After an AI system goes live, what should be in place to keep watching how it behaves?",
       "supporting_phrase": "Post-deployment AI system monitoring plans are implemented",
-      "verified": false
+      "verified": true
     },
     {
       "id": "csf-01",
@@ -118,7 +122,7 @@
       "phrasing": "close",
       "question": "What are the six CSF 2.0 Core Functions?",
       "supporting_phrase": "GOVERN, IDENTIFY, PROTECT, DETECT, RESPOND, and RECOVER",
-      "verified": false
+      "verified": true
     },
     {
       "id": "csf-02",
@@ -129,7 +133,7 @@
       "phrasing": "paraphrased",
       "question": "In the Cybersecurity Framework, which function covers controlling who can log in and access systems?",
       "supporting_phrase": "identity management, authentication, and access control",
-      "verified": false
+      "verified": true
     },
     {
       "id": "csf-03",
@@ -140,7 +144,7 @@
       "phrasing": "close",
       "question": "What is the RECOVER function about in CSF 2.0?",
       "supporting_phrase": "Assets and operations affected by a cybersecurity incident are restored",
-      "verified": false
+      "verified": true
     },
     {
       "id": "csf-04",
@@ -151,7 +155,7 @@
       "phrasing": "paraphrased",
       "question": "Should the cybersecurity framework's functions be carried out one after another in sequence?",
       "supporting_phrase": "The Functions should be addressed concurrently",
-      "verified": false
+      "verified": true
     },
     {
       "id": "csf-05",
@@ -162,7 +166,7 @@
       "phrasing": "close",
       "question": "What are the four CSF Tiers?",
       "supporting_phrase": "Risk Informed (Tier 2), Repeatable (Tier 3), and Adaptive (Tier 4)",
-      "verified": false
+      "verified": true
     },
     {
       "id": "csf-06",
@@ -173,7 +177,7 @@
       "phrasing": "paraphrased",
       "question": "According to the framework, who ultimately owns cybersecurity risk in an organization?",
       "supporting_phrase": "Organizational leadership is responsible and accountable for cybersecurity risk",
-      "verified": false
+      "verified": true
     },
     {
       "id": "csf-07",
@@ -184,7 +188,7 @@
       "phrasing": "close",
       "question": "What kinds of organizations is the Cybersecurity Framework 2.0 designed to help?",
       "supporting_phrase": "organizations of all sizes and sectors",
-      "verified": false
+      "verified": true
     },
     {
       "id": "csf-08",
@@ -195,7 +199,7 @@
       "phrasing": "paraphrased",
       "question": "What is the first thing to do when building a CSF Organizational Profile?",
       "supporting_phrase": "Scope the Organizational Profile",
-      "verified": false
+      "verified": true
     },
     {
       "id": "con-01",
@@ -206,7 +210,7 @@
       "phrasing": "paraphrased",
       "question": "How old do you have to be to serve in the House of Representatives?",
       "supporting_phrase": "Age of twenty five Years",
-      "verified": false
+      "verified": true
     },
     {
       "id": "con-02",
@@ -217,7 +221,7 @@
       "phrasing": "close",
       "question": "What is the minimum age to be eligible for the office of President?",
       "supporting_phrase": "thirty five Years, and been fourteen Years a Resident",
-      "verified": false
+      "verified": true
     },
     {
       "id": "con-03",
@@ -228,7 +232,7 @@
       "phrasing": "paraphrased",
       "question": "Can a person be elected president three times?",
       "supporting_phrase": "more than twice",
-      "verified": false
+      "verified": true
     },
     {
       "id": "con-04",
@@ -239,7 +243,7 @@
       "phrasing": "paraphrased",
       "question": "Can the government hold someone in custody without letting them challenge the detention in court?",
       "supporting_phrase": "Writ of Habeas Corpus shall not be",
-      "verified": false
+      "verified": true
     },
     {
       "id": "con-05",
@@ -250,7 +254,7 @@
       "phrasing": "close",
       "question": "How can Congress propose amendments to the Constitution?",
       "supporting_phrase": "whenever two thirds of both Houses shall deem it",
-      "verified": false
+      "verified": true
     },
     {
       "id": "con-06",
@@ -261,7 +265,7 @@
       "phrasing": "paraphrased",
       "question": "Are people protected from the government searching their homes without good reason?",
       "supporting_phrase": "against unreasonable searches and seizures",
-      "verified": false
+      "verified": true
     },
     {
       "id": "con-07",
@@ -272,7 +276,7 @@
       "phrasing": "close",
       "question": "On what date was ratification of the Bill of Rights completed?",
       "supporting_phrase": "Ratification was completed on December 15, 1791",
-      "verified": false
+      "verified": true
     },
     {
       "id": "con-08",
@@ -283,7 +287,7 @@
       "phrasing": "close",
       "question": "What does the Constitution say about excessive bail?",
       "supporting_phrase": "Excessive bail shall not be required",
-      "verified": false
+      "verified": true
     },
     {
       "id": "neg-01",
@@ -291,7 +295,7 @@
       "difficulty": "easy",
       "question": "What is the boiling point of mercury in Kelvin?",
       "why_unanswerable": "Off-topic: none of the three documents discusses chemistry.",
-      "verified": false
+      "verified": true
     },
     {
       "id": "neg-02",
@@ -299,7 +303,7 @@
       "difficulty": "hard",
       "question": "How many staff members work in the European Union's AI Office?",
       "why_unanswerable": "Near-topic (AI governance) but the EU AI Office is not in these U.S. documents.",
-      "verified": false
+      "verified": true
     },
     {
       "id": "neg-03",
@@ -307,7 +311,7 @@
       "difficulty": "hard",
       "question": "What is the annual salary of a U.S. Senator in dollars?",
       "why_unanswerable": "Near-topic: the Constitution says compensation is set by law but gives no amount.",
-      "verified": false
+      "verified": true
     },
     {
       "id": "neg-04",
@@ -315,7 +319,7 @@
       "difficulty": "hard",
       "question": "How much does the official NIST CSF 2.0 certification exam cost?",
       "why_unanswerable": "Near-topic, false premise: CSF 2.0 describes no certification exam or price.",
-      "verified": false
+      "verified": true
     },
     {
       "id": "neg-05",
@@ -323,7 +327,7 @@
       "difficulty": "hard",
       "question": "Which company developed the GPT-4 language model?",
       "why_unanswerable": "Near-topic (AI) general knowledge that is not stated in these documents.",
-      "verified": false
+      "verified": true
     }
   ]
 }
