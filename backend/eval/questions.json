@@ -1,6 +1,6 @@
 {
   "status": "VERIFIED",
-  "verification": "Verified by Sarthak on 2026-11-02 against the PDFs, before the first LLM run.",
+  "verification": "Verified by Sarthak on 2026-11-02 against the PDFs.",
   "page_index": "`page` is the 1-based physical page index (the number in a PDF viewer's page box), NOT the number printed on the page. Example: Constitution page 37 is printed as 31.",
   "rules": "Do not edit questions after seeing results unless the change is logged in `changelog` with a reason. Every results file records this file's SHA-256.",
   "changelog": [
