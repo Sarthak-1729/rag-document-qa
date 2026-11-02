@@ -1,0 +1,7 @@
+# Only pyproject.toml, constraints.txt and app/ are needed in the image.
+**
+!pyproject.toml
+!constraints.txt
+!app
+**/__pycache__
+**/*.py[cod]

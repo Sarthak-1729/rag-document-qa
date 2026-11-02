@@ -1,0 +1,38 @@
+# Usage: copy .env.example to .env, then run: docker compose up --build
+# Open http://localhost:8080 (change the ports with FRONTEND_PORT and BACKEND_PORT).
+services:
+  backend:
+    build: ./backend
+    # Secrets reach the container at runtime only; they are never in an image.
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      # These values describe the container, so they override .env.
+      DATA_DIR: /data
+      CORS_ORIGINS: http://localhost:${FRONTEND_PORT:-8080},http://127.0.0.1:${FRONTEND_PORT:-8080}
+      # "localhost" inside a container is the container itself, so Ollama is reached on the host.
+      OLLAMA_BASE_URL: ${DOCKER_OLLAMA_BASE_URL:-http://host.docker.internal:11434}
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    ports:
+      - ${BACKEND_PORT:-8001}:8001
+    volumes:
+      - rag-data:/data
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        # The browser calls the backend directly, so this is the address on your machine.
+        VITE_API_URL: http://localhost:${BACKEND_PORT:-8001}
+    ports:
+      - ${FRONTEND_PORT:-8080}:8080
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  rag-data:
