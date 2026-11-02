@@ -68,7 +68,9 @@ def git_state() -> dict:
         except (OSError, subprocess.CalledProcessError):
             return ""
 
-    return {"commit": run("rev-parse", "HEAD") or None, "dirty": bool(run("status", "--porcelain"))}
+    # Saved results are this script's output, not an input, so they don't make a run dirty.
+    changes = run("status", "--porcelain", "--", ":/", ":(top,exclude)backend/eval/results")
+    return {"commit": run("rev-parse", "HEAD") or None, "dirty": bool(changes)}
 
 
 def build_index(settings: Settings) -> DocumentService:
