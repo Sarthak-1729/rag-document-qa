@@ -1,0 +1,1667 @@
+{
+  "meta": {
+    "run_id": "20261102-073742",
+    "date_utc": "2026-11-02T07:37:42+00:00",
+    "mode": "full",
+    "git": {
+      "commit": "7c6104d070709baefd824975c1f200f73c90b365",
+      "dirty": true
+    },
+    "questions_sha256": "357615538bb0289d5b33f144bcf39e85298e122788c2f87d1546c38d6f0b35db",
+    "questions_status": "VERIFIED",
+    "questions_verified": 30,
+    "questions_total": 30,
+    "documents": [
+      {
+        "file": "NIST.AI.100-1.pdf",
+        "sha256": "7576edb531d9848825814ee88e28b1795d3a84b435b4b797d3670eafdc4a89f1",
+        "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf"
+      },
+      {
+        "file": "NIST.CSWP.29.pdf",
+        "sha256": "3c31f46fee98cac0c4323453e5109291a213b4de7fef8c058af9bf67f717433c",
+        "url": "https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.29.pdf"
+      },
+      {
+        "file": "CDOC-110hdoc50.pdf",
+        "sha256": "7f29c4a79e310cc7bcee5f3fd07fb1367e463bd4530fa5d854ebdd4fd4402e57",
+        "url": "https://www.govinfo.gov/content/pkg/CDOC-110hdoc50/pdf/CDOC-110hdoc50.pdf"
+      }
+    ],
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "chunk_size": 800,
+    "chunk_overlap": 150,
+    "retrieval_k": 5,
+    "ask_top_k": 5,
+    "llm": {
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "thinking_level": "minimal",
+      "max_tokens": 1024,
+      "min_relevance_score_during_run": null,
+      "delay_seconds": 6.0
+    },
+    "python": "3.11.9"
+  },
+  "phrase_also_found_on_pages": {
+    "rmf-06": [
+      5
+    ],
+    "rmf-07": [
+      33,
+      40
+    ],
+    "rmf-08": [
+      5
+    ],
+    "csf-01": [
+      31
+    ],
+    "csf-02": [
+      20,
+      24
+    ],
+    "csf-03": [
+      27
+    ],
+    "csf-05": [
+      31
+    ],
+    "csf-07": [
+      7
+    ],
+    "con-03": [
+      68,
+      80
+    ],
+    "con-04": [
+      58,
+      71,
+      72,
+      85
+    ],
+    "con-06": [
+      65,
+      66
+    ],
+    "con-08": [
+      42,
+      49,
+      53,
+      71,
+      82
+    ]
+  },
+  "retrieval_rows": [
+    {
+      "id": "rmf-01",
+      "answerable": true,
+      "top1_score": 0.7578,
+      "top_hits": [
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 23,
+          "score": 0.7578
+        },
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 23,
+          "score": 0.6842
+        },
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 23,
+          "score": 0.6159
+        },
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 24,
+          "score": 0.5741
+        },
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 34,
+          "score": 0.5671
+        }
+      ],
+      "rank": 0,
+      "rank_lenient": 0
+    },
+    {
+      "id": "rmf-02",
+      "answerable": true,
+      "top1_score": 0.7477,
+      "top_hits": [
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 14,
+          "score": 0.7477
+        },
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 47,
+          "score": 0.7042
+        },
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 14,
+          "score": 0.7023
+        },
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 47,
+          "score": 0.7002
+        },
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 47,
+          "score": 0.6946
+        }
+      ],
+      "rank": null,
+      "rank_lenient": null
+    },
+    {
+      "id": "rmf-03",
+      "answerable": true,
+      "top1_score": 0.7805,
+      "top_hits": [
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 47,
+          "score": 0.7805
+        },
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 9,
+          "score": 0.7564
+        },
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 47,
+          "score": 0.7447
+        },
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 6,
+          "score": 0.7324
+        },
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 19,
+          "score": 0.7208
+        }
+      ],
+      "rank": 1,
+      "rank_lenient": 1
+    },
+    {
+      "id": "rmf-04",
+      "answerable": true,
+      "top1_score": 0.6963,
+      "top_hits": [
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 8,
+          "score": 0.6963
+        },
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 8,
+          "score": 0.6919
+        },
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 40,
+          "score": 0.6695
+        },
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 7,
+          "score": 0.6642
+        },
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 47,
+          "score": 0.6642
+        }
+      ],
+      "rank": 3,
+      "rank_lenient": 3
+    },
+    {
+      "id": "rmf-05",
+      "answerable": true,
+      "top1_score": 0.7686,
+      "top_hits": [
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 25,
+          "score": 0.7686
+        },
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 47,
+          "score": 0.6816
+        },
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 25,
+          "score": 0.6764
+        },
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 8,
+          "score": 0.6679
+        },
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 26,
+          "score": 0.6519
+        }
+      ],
+      "rank": 0,
+      "rank_lenient": 0
+    },
+    {
+      "id": "rmf-06",
+      "answerable": true,
+      "top1_score": 0.6942,
+      "top_hits": [
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 25,
+          "score": 0.6942
+        },
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 26,
+          "score": 0.6882
+        },
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 25,
+          "score": 0.6401
+        },
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 26,
+          "score": 0.6275
+        },
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 6,
+          "score": 0.6072
+        }
+      ],
+      "rank": 0,
+      "rank_lenient": 0
+    },
+    {
+      "id": "rmf-07",
+      "answerable": true,
+      "top1_score": 0.6144,
+      "top_hits": [
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 14,
+          "score": 0.6144
+        },
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 41,
+          "score": 0.6042
+        },
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 40,
+          "score": 0.576
+        },
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 14,
+          "score": 0.5515
+        },
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 31,
+          "score": 0.5498
+        }
+      ],
+      "rank": 0,
+      "rank_lenient": 0
+    },
+    {
+      "id": "rmf-08",
+      "answerable": true,
+      "top1_score": 0.6621,
+      "top_hits": [
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 17,
+          "score": 0.6621
+        },
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 17,
+          "score": 0.6317
+        },
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 17,
+          "score": 0.5657
+        },
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 5,
+          "score": 0.5576
+        },
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 5,
+          "score": 0.5435
+        }
+      ],
+      "rank": 0,
+      "rank_lenient": 0
+    },
+    {
+      "id": "rmf-09",
+      "answerable": true,
+      "top1_score": 0.5493,
+      "top_hits": [
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 6,
+          "score": 0.5493
+        },
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 29,
+          "score": 0.5436
+        },
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 19,
+          "score": 0.5263
+        },
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 37,
+          "score": 0.52
+        },
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 14,
+          "score": 0.5153
+        }
+      ],
+      "rank": null,
+      "rank_lenient": null
+    },
+    {
+      "id": "csf-01",
+      "answerable": true,
+      "top1_score": 0.6672,
+      "top_hits": [
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 7,
+          "score": 0.6672
+        },
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 20,
+          "score": 0.6612
+        },
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 10,
+          "score": 0.6397
+        },
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 20,
+          "score": 0.6291
+        },
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 14,
+          "score": 0.622
+        }
+      ],
+      "rank": null,
+      "rank_lenient": null
+    },
+    {
+      "id": "csf-02",
+      "answerable": true,
+      "top1_score": 0.5993,
+      "top_hits": [
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 25,
+          "score": 0.5993
+        },
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 9,
+          "score": 0.5638
+        },
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 10,
+          "score": 0.5562
+        },
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 24,
+          "score": 0.5456
+        },
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 2,
+          "score": 0.5445
+        }
+      ],
+      "rank": 1,
+      "rank_lenient": 1
+    },
+    {
+      "id": "csf-03",
+      "answerable": true,
+      "top1_score": 0.5473,
+      "top_hits": [
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 28,
+          "score": 0.5473
+        },
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 9,
+          "score": 0.523
+        },
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 20,
+          "score": 0.5188
+        },
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 31,
+          "score": 0.5042
+        },
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 7,
+          "score": 0.4649
+        }
+      ],
+      "rank": 1,
+      "rank_lenient": 1
+    },
+    {
+      "id": "csf-04",
+      "answerable": true,
+      "top1_score": 0.6499,
+      "top_hits": [
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 10,
+          "score": 0.6499
+        },
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 8,
+          "score": 0.6196
+        },
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 9,
+          "score": 0.6151
+        },
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 2,
+          "score": 0.5661
+        },
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 6,
+          "score": 0.5459
+        }
+      ],
+      "rank": 0,
+      "rank_lenient": 0
+    },
+    {
+      "id": "csf-05",
+      "answerable": true,
+      "top1_score": 0.6179,
+      "top_hits": [
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 7,
+          "score": 0.6179
+        },
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 31,
+          "score": 0.6135
+        },
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 12,
+          "score": 0.5823
+        },
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 13,
+          "score": 0.5742
+        },
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 7,
+          "score": 0.5706
+        }
+      ],
+      "rank": 2,
+      "rank_lenient": 1
+    },
+    {
+      "id": "csf-06",
+      "answerable": true,
+      "top1_score": 0.7055,
+      "top_hits": [
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 8,
+          "score": 0.7055
+        },
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 8,
+          "score": 0.6891
+        },
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 30,
+          "score": 0.6886
+        },
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 16,
+          "score": 0.6863
+        },
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 17,
+          "score": 0.6668
+        }
+      ],
+      "rank": null,
+      "rank_lenient": null
+    },
+    {
+      "id": "csf-07",
+      "answerable": true,
+      "top1_score": 0.7322,
+      "top_hits": [
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 2,
+          "score": 0.7322
+        },
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 5,
+          "score": 0.7111
+        },
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 6,
+          "score": 0.6624
+        },
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 7,
+          "score": 0.6463
+        },
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 3,
+          "score": 0.6404
+        }
+      ],
+      "rank": 1,
+      "rank_lenient": 1
+    },
+    {
+      "id": "csf-08",
+      "answerable": true,
+      "top1_score": 0.7318,
+      "top_hits": [
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 11,
+          "score": 0.7318
+        },
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 12,
+          "score": 0.6896
+        },
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 11,
+          "score": 0.635
+        },
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 7,
+          "score": 0.6338
+        },
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 6,
+          "score": 0.6236
+        }
+      ],
+      "rank": 1,
+      "rank_lenient": 1
+    },
+    {
+      "id": "con-01",
+      "answerable": true,
+      "top1_score": 0.5979,
+      "top_hits": [
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 23,
+          "score": 0.5979
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 23,
+          "score": 0.5758
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 71,
+          "score": 0.5751
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 40,
+          "score": 0.5567
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 73,
+          "score": 0.5491
+        }
+      ],
+      "rank": null,
+      "rank_lenient": null
+    },
+    {
+      "id": "con-02",
+      "answerable": true,
+      "top1_score": 0.6496,
+      "top_hits": [
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 71,
+          "score": 0.6496
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 13,
+          "score": 0.6088
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 13,
+          "score": 0.5968
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 63,
+          "score": 0.552
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 43,
+          "score": 0.5373
+        }
+      ],
+      "rank": 1,
+      "rank_lenient": 1
+    },
+    {
+      "id": "con-03",
+      "answerable": true,
+      "top1_score": 0.6191,
+      "top_hits": [
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 28,
+          "score": 0.6191
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 28,
+          "score": 0.5761
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 71,
+          "score": 0.5493
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 13,
+          "score": 0.5436
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 21,
+          "score": 0.5088
+        }
+      ],
+      "rank": 0,
+      "rank_lenient": 0
+    },
+    {
+      "id": "con-04",
+      "answerable": true,
+      "top1_score": 0.4137,
+      "top_hits": [
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 10,
+          "score": 0.4137
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 77,
+          "score": 0.4045
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 20,
+          "score": 0.379
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 82,
+          "score": 0.3694
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 70,
+          "score": 0.3614
+        }
+      ],
+      "rank": null,
+      "rank_lenient": null
+    },
+    {
+      "id": "con-05",
+      "answerable": true,
+      "top1_score": 0.6427,
+      "top_hits": [
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 23,
+          "score": 0.6427
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 36,
+          "score": 0.6212
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 35,
+          "score": 0.6142
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 36,
+          "score": 0.6093
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 37,
+          "score": 0.6093
+        }
+      ],
+      "rank": null,
+      "rank_lenient": null
+    },
+    {
+      "id": "con-06",
+      "answerable": true,
+      "top1_score": 0.483,
+      "top_hits": [
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 65,
+          "score": 0.483
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 75,
+          "score": 0.434
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 19,
+          "score": 0.4192
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 19,
+          "score": 0.3721
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 70,
+          "score": 0.3291
+        }
+      ],
+      "rank": 2,
+      "rank_lenient": 0
+    },
+    {
+      "id": "con-07",
+      "answerable": true,
+      "top1_score": 0.68,
+      "top_hits": [
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 6,
+          "score": 0.68
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 6,
+          "score": 0.6446
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 19,
+          "score": 0.6342
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 23,
+          "score": 0.6116
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 32,
+          "score": 0.6046
+        }
+      ],
+      "rank": 2,
+      "rank_lenient": 2
+    },
+    {
+      "id": "con-08",
+      "answerable": true,
+      "top1_score": 0.6918,
+      "top_hits": [
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 20,
+          "score": 0.6918
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 53,
+          "score": 0.6499
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 82,
+          "score": 0.5967
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 42,
+          "score": 0.5567
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 10,
+          "score": 0.5348
+        }
+      ],
+      "rank": 0,
+      "rank_lenient": 0
+    },
+    {
+      "id": "neg-01",
+      "answerable": false,
+      "top1_score": 0.1758,
+      "top_hits": [
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 50,
+          "score": 0.1758
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 78,
+          "score": 0.168
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 44,
+          "score": 0.1471
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 10,
+          "score": 0.1126
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 68,
+          "score": 0.112
+        }
+      ]
+    },
+    {
+      "id": "neg-02",
+      "answerable": false,
+      "top1_score": 0.4847,
+      "top_hits": [
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 7,
+          "score": 0.4847
+        },
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 42,
+          "score": 0.4842
+        },
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 7,
+          "score": 0.4783
+        },
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 40,
+          "score": 0.474
+        },
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 28,
+          "score": 0.4464
+        }
+      ]
+    },
+    {
+      "id": "neg-03",
+      "answerable": false,
+      "top1_score": 0.4019,
+      "top_hits": [
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 58,
+          "score": 0.4019
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 44,
+          "score": 0.399
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 71,
+          "score": 0.3929
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 75,
+          "score": 0.3885
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 73,
+          "score": 0.382
+        }
+      ]
+    },
+    {
+      "id": "neg-04",
+      "answerable": false,
+      "top1_score": 0.4085,
+      "top_hits": [
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 1,
+          "score": 0.4085
+        },
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 14,
+          "score": 0.391
+        },
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 20,
+          "score": 0.3663
+        },
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 2,
+          "score": 0.364
+        },
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 3,
+          "score": 0.354
+        }
+      ]
+    },
+    {
+      "id": "neg-05",
+      "answerable": false,
+      "top1_score": 0.1888,
+      "top_hits": [
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 48,
+          "score": 0.1888
+        },
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 47,
+          "score": 0.1792
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 26,
+          "score": 0.173
+        },
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 7,
+          "score": 0.1683
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 20,
+          "score": 0.1683
+        }
+      ]
+    }
+  ],
+  "retrieval": {
+    "all (strict: expected page)": {
+      "n": 25,
+      "hit@1": 0.32,
+      "hit@3": 0.68,
+      "hit@5": 0.72
+    },
+    "all (lenient: any page with the phrase)": {
+      "n": 25,
+      "hit@1": 0.36,
+      "hit@3": 0.68,
+      "hit@5": 0.72
+    },
+    "doc=CDOC-110hdoc50.pdf": {
+      "n": 8,
+      "hit@1": 0.25,
+      "hit@3": 0.625,
+      "hit@5": 0.625
+    },
+    "doc=NIST.AI.100-1.pdf": {
+      "n": 9,
+      "hit@1": 0.5556,
+      "hit@3": 0.6667,
+      "hit@5": 0.7778
+    },
+    "doc=NIST.CSWP.29.pdf": {
+      "n": 8,
+      "hit@1": 0.125,
+      "hit@3": 0.75,
+      "hit@5": 0.75
+    },
+    "phrasing=close": {
+      "n": 12,
+      "hit@1": 0.3333,
+      "hit@3": 0.8333,
+      "hit@5": 0.8333
+    },
+    "phrasing=paraphrased": {
+      "n": 13,
+      "hit@1": 0.3077,
+      "hit@3": 0.5385,
+      "hit@5": 0.6154
+    }
+  },
+  "threshold": {
+    "top1_score_answerable": {
+      "n": 25,
+      "min": 0.4137,
+      "median": 0.6621,
+      "max": 0.7805,
+      "values": [
+        0.7578,
+        0.7477,
+        0.7805,
+        0.6963,
+        0.7686,
+        0.6942,
+        0.6144,
+        0.6621,
+        0.5493,
+        0.6672,
+        0.5993,
+        0.5473,
+        0.6499,
+        0.6179,
+        0.7055,
+        0.7322,
+        0.7318,
+        0.5979,
+        0.6496,
+        0.6191,
+        0.4137,
+        0.6427,
+        0.483,
+        0.68,
+        0.6918
+      ]
+    },
+    "top1_score_unanswerable": {
+      "n": 5,
+      "min": 0.1758,
+      "median": 0.4019,
+      "max": 0.4847,
+      "values": [
+        0.1758,
+        0.4847,
+        0.4019,
+        0.4085,
+        0.1888
+      ]
+    },
+    "in_sample": {
+      "note": "Threshold chosen AND scored on the same 30 questions (optimistic).",
+      "threshold": 0.516,
+      "answerable_kept": 23,
+      "answerable_total": 25,
+      "unanswerable_refused": 5,
+      "unanswerable_total": 5
+    },
+    "leave_one_out": {
+      "note": "Each question scored with a threshold chosen on the other 29.",
+      "answerable_kept": 23,
+      "answerable_total": 25,
+      "unanswerable_refused": 4,
+      "unanswerable_total": 5
+    },
+    "caveat": "Only 5 unanswerable questions: treat refusal estimates as rough."
+  },
+  "llm_records": {
+    "rmf-01": {
+      "refused": false,
+      "refusal_reason": null,
+      "answer": "The three major categories of AI bias identified by NIST are systemic, computational and statistical, and human-cognitive [1].",
+      "sources": [
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 23
+        }
+      ],
+      "cited_expected_page": true,
+      "first_source_is_expected": true,
+      "cited_accepted_page": true
+    },
+    "rmf-02": {
+      "refused": true,
+      "refusal_reason": "model",
+      "answer": "I don't know based on the provided documents.",
+      "sources": [],
+      "cited_expected_page": false,
+      "first_source_is_expected": false,
+      "cited_accepted_page": false
+    },
+    "rmf-03": {
+      "refused": false,
+      "refusal_reason": null,
+      "answer": "In the context of the AI RMF, risk refers to the composite measure of an event’s probability of occurring and the magnitude or degree of the consequences of the corresponding event [1].",
+      "sources": [
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 9
+        }
+      ],
+      "cited_expected_page": true,
+      "first_source_is_expected": true,
+      "cited_accepted_page": true
+    },
+    "rmf-04": {
+      "refused": false,
+      "refusal_reason": null,
+      "answer": "The National Artificial Intelligence Initiative Act of 2020 called for NIST's broader AI efforts, including the development of the AI RMF [1][2].",
+      "sources": [
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 8
+        },
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 7
+        }
+      ],
+      "cited_expected_page": true,
+      "first_source_is_expected": false,
+      "cited_accepted_page": true
+    },
+    "rmf-05": {
+      "refused": false,
+      "refusal_reason": null,
+      "answer": "The four functions of the AI RMF Core are GOVERN, MAP, MEASURE, and MANAGE [1].",
+      "sources": [
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 25
+        }
+      ],
+      "cited_expected_page": true,
+      "first_source_is_expected": true,
+      "cited_accepted_page": true
+    },
+    "rmf-06": {
+      "refused": false,
+      "refusal_reason": null,
+      "answer": "Governance is designed to be a cross-cutting function to inform and be infused throughout the other three functions [1].",
+      "sources": [
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 25
+        }
+      ],
+      "cited_expected_page": true,
+      "first_source_is_expected": true,
+      "cited_accepted_page": true
+    },
+    "rmf-07": {
+      "refused": false,
+      "refusal_reason": null,
+      "answer": "TEVV stands for test, evaluation, verification, and validation [1][2].",
+      "sources": [
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 40
+        },
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 14
+        }
+      ],
+      "cited_expected_page": true,
+      "first_source_is_expected": false,
+      "cited_accepted_page": true
+    },
+    "rmf-08": {
+      "refused": false,
+      "refusal_reason": null,
+      "answer": "Valid & Reliable is a necessary condition of trustworthiness and serves as the base for the other trustworthiness characteristics [1][2].",
+      "sources": [
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 17
+        },
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 5
+        }
+      ],
+      "cited_expected_page": true,
+      "first_source_is_expected": true,
+      "cited_accepted_page": true
+    },
+    "rmf-09": {
+      "refused": false,
+      "refusal_reason": null,
+      "answer": "After an AI system is deployed, ongoing testing or monitoring should be used to confirm that the system is performing as intended and to assess its validity and reliability [1]. Additionally, mechanisms should be in place and applied to sustain the value of deployed AI systems [2].",
+      "sources": [
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 19
+        },
+        {
+          "doc": "NIST.AI.100-1.pdf",
+          "page": 37
+        }
+      ],
+      "cited_expected_page": false,
+      "first_source_is_expected": false,
+      "cited_accepted_page": false
+    },
+    "csf-01": {
+      "refused": true,
+      "refusal_reason": "model",
+      "answer": "I don't know based on the provided documents.",
+      "sources": [],
+      "cited_expected_page": false,
+      "first_source_is_expected": false,
+      "cited_accepted_page": false
+    },
+    "csf-02": {
+      "refused": false,
+      "refusal_reason": null,
+      "answer": "The PROTECT function covers identity management, authentication, and access control, ensuring that access to physical and logical assets is limited to authorized users, services, and hardware [1].",
+      "sources": [
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 24
+        }
+      ],
+      "cited_expected_page": false,
+      "first_source_is_expected": false,
+      "cited_accepted_page": true
+    },
+    "csf-03": {
+      "refused": false,
+      "refusal_reason": null,
+      "answer": "In CSF 2.0, the RECOVER function involves enabling appropriate communication during recovery efforts and restoring normal operations to reduce the effects of cybersecurity incidents [1].",
+      "sources": [
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 9
+        }
+      ],
+      "cited_expected_page": true,
+      "first_source_is_expected": true,
+      "cited_accepted_page": true
+    },
+    "csf-04": {
+      "refused": false,
+      "refusal_reason": null,
+      "answer": "No, the Functions should be addressed concurrently, and the order of the Functions does not imply a sequence for achieving them [1][2]. Actions supporting GOVERN, IDENTIFY, PROTECT, and DETECT should happen continuously, while actions supporting RESPOND and RECOVER should be ready at all times and occur when incidents happen [1].",
+      "sources": [
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 10
+        },
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 8
+        }
+      ],
+      "cited_expected_page": true,
+      "first_source_is_expected": true,
+      "cited_accepted_page": true
+    },
+    "csf-05": {
+      "refused": false,
+      "refusal_reason": null,
+      "answer": "The four CSF Tiers are Partial (Tier 1), Risk Informed (Tier 2), Repeatable (Tier 3), and Adaptive (Tier 4) [1][2].",
+      "sources": [
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 31
+        },
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 12
+        }
+      ],
+      "cited_expected_page": true,
+      "first_source_is_expected": false,
+      "cited_accepted_page": true
+    },
+    "csf-06": {
+      "refused": true,
+      "refusal_reason": "model",
+      "answer": "I don't know based on the provided documents.",
+      "sources": [],
+      "cited_expected_page": false,
+      "first_source_is_expected": false,
+      "cited_accepted_page": false
+    },
+    "csf-07": {
+      "refused": false,
+      "refusal_reason": null,
+      "answer": "The Cybersecurity Framework 2.0 is designed to help organizations of all sizes and sectors, which include industry, government agencies, academia, and nonprofit organizations [1][2][3]. It can be used regardless of the organization's maturity level or technical sophistication regarding its cybersecurity programs [1][2][3].",
+      "sources": [
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 2
+        },
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 5
+        },
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 7
+        }
+      ],
+      "cited_expected_page": true,
+      "first_source_is_expected": false,
+      "cited_accepted_page": true
+    },
+    "csf-08": {
+      "refused": false,
+      "refusal_reason": null,
+      "answer": "The first thing to do when building a CSF Organizational Profile is to scope it by documenting the high-level facts and assumptions on which the Profile will be based to define its scope [1].",
+      "sources": [
+        {
+          "doc": "NIST.CSWP.29.pdf",
+          "page": 12
+        }
+      ],
+      "cited_expected_page": true,
+      "first_source_is_expected": true,
+      "cited_accepted_page": true
+    },
+    "con-01": {
+      "refused": false,
+      "refusal_reason": null,
+      "answer": "You must have attained the age of twenty-five years to serve as a Representative [1][2][3].",
+      "sources": [
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 71
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 40
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 73
+        }
+      ],
+      "cited_expected_page": false,
+      "first_source_is_expected": false,
+      "cited_accepted_page": false
+    },
+    "con-02": {
+      "refused": false,
+      "refusal_reason": null,
+      "answer": "The minimum age to be eligible for the office of President is thirty-five years [1][2].",
+      "sources": [
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 71
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 13
+        }
+      ],
+      "cited_expected_page": true,
+      "first_source_is_expected": false,
+      "cited_accepted_page": true
+    },
+    "con-03": {
+      "refused": false,
+      "refusal_reason": null,
+      "answer": "No person shall be elected to the office of the President more than twice [1].",
+      "sources": [
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 28
+        }
+      ],
+      "cited_expected_page": true,
+      "first_source_is_expected": true,
+      "cited_accepted_page": true
+    },
+    "con-04": {
+      "refused": true,
+      "refusal_reason": "model",
+      "answer": "I don't know based on the provided documents.",
+      "sources": [],
+      "cited_expected_page": false,
+      "first_source_is_expected": false,
+      "cited_accepted_page": false
+    },
+    "con-05": {
+      "refused": false,
+      "refusal_reason": null,
+      "answer": "Congress can propose amendments to the Constitution with the concurrence of two-thirds of both Houses of Congress [1][2].",
+      "sources": [
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 36
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 36
+        }
+      ],
+      "cited_expected_page": false,
+      "first_source_is_expected": false,
+      "cited_accepted_page": false
+    },
+    "con-06": {
+      "refused": false,
+      "refusal_reason": null,
+      "answer": "Yes, the right of the people to be secure in their houses against unreasonable searches and seizures shall not be violated, and warrants may only be issued upon probable cause supported by oath or affirmation, describing the place to be searched and the persons or things to be seized [1][2].",
+      "sources": [
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 75
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 19
+        }
+      ],
+      "cited_expected_page": true,
+      "first_source_is_expected": false,
+      "cited_accepted_page": true
+    },
+    "con-07": {
+      "refused": false,
+      "refusal_reason": null,
+      "answer": "The ratification of the Bill of Rights was completed on December 15, 1791 [1].",
+      "sources": [
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 19
+        }
+      ],
+      "cited_expected_page": true,
+      "first_source_is_expected": true,
+      "cited_accepted_page": true
+    },
+    "con-08": {
+      "refused": false,
+      "refusal_reason": null,
+      "answer": "Excessive bail shall not be required [1][2][3][4].",
+      "sources": [
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 20
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 53
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 82
+        },
+        {
+          "doc": "CDOC-110hdoc50.pdf",
+          "page": 42
+        }
+      ],
+      "cited_expected_page": true,
+      "first_source_is_expected": true,
+      "cited_accepted_page": true
+    },
+    "neg-01": {
+      "refused": true,
+      "refusal_reason": "model",
+      "answer": "I don't know based on the provided documents.",
+      "sources": []
+    },
+    "neg-02": {
+      "refused": true,
+      "refusal_reason": "model",
+      "answer": "I don't know based on the provided documents.",
+      "sources": []
+    },
+    "neg-03": {
+      "refused": true,
+      "refusal_reason": "model",
+      "answer": "I don't know based on the provided documents.",
+      "sources": []
+    },
+    "neg-04": {
+      "refused": true,
+      "refusal_reason": "model",
+      "answer": "I don't know based on the provided documents.",
+      "sources": []
+    },
+    "neg-05": {
+      "refused": true,
+      "refusal_reason": "model",
+      "answer": "I don't know based on the provided documents.",
+      "sources": []
+    }
+  },
+  "llm": {
+    "completed": 30,
+    "errors": {},
+    "model_only": {
+      "unanswerable_refused": 5,
+      "unanswerable_total": 5,
+      "answerable_falsely_refused": 4,
+      "answerable_total": 25,
+      "refusal_reasons": {
+        "model": 9
+      }
+    },
+    "citations": {
+      "answered": 21,
+      "cited_expected_page": 17,
+      "cited_accepted_page": 18,
+      "first_source_is_expected": 11
+    },
+    "with_in_sample_threshold": {
+      "threshold": 0.516,
+      "unanswerable_refused": 5,
+      "unanswerable_total": 5,
+      "answerable_falsely_refused": 5,
+      "answerable_total": 25
+    }
+  }
+}
