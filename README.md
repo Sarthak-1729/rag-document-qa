@@ -1,5 +1,7 @@
 # RAG Document Q&A with Citations
 
+[![CI](https://github.com/Sarthak-1729/rag-document-qa/actions/workflows/ci.yml/badge.svg)](https://github.com/Sarthak-1729/rag-document-qa/actions/workflows/ci.yml)
+
 Upload PDFs and ask questions in plain language. Answers come only from your documents and
 cite the document, the PDF page and the exact passage. If the answer isn't in the documents,
 the app says it doesn't know.
